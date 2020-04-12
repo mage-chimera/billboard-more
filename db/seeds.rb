@@ -6,18 +6,18 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# require "csv"
-# 
-# CSV.foreach('db/seed_songs.csv') do |row|
-#   Song.create(title: row[0], display_artist: row[1], ranking: row[2], year: row[3])
-# end
+require "csv"
+
+CSV.foreach('db/seed_songs.csv') do |row|
+  Song.create(title: row[0], display_artist: row[1], ranking: row[2], year: row[3])
+end
 
 
 # require "csv"
 # 
-# CSV.foreach('db/seed_artists.csv') do |row|
-#   Artist.create(name: row[0])
-# end
+CSV.foreach('db/seed_artists.csv') do |row|
+  Artist.create(name: row[0])
+end
 
 
 #require "csv"
@@ -27,8 +27,8 @@
 #end
 
 
-require "csv"
-
+# require "csv"
+# 
 CSV.foreach('db/seed_songartists.csv') do |row|
   SongArtist.create(song_id: row[0], artist_id: row[1])
   puts "#{row[0]}"
