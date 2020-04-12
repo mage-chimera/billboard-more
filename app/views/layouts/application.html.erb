@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Billboard</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <%= link_to 'Billboard', root_path, class: 'navbar-brand' %>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><%= link_to 'Artist', artists_path %></li>
+          </ul>
+          <%= search_form_for @q, html: { class: 'navbar-form navbar-right' } do |f| %>
+            <div class="form-group">
+              <%= f.search_field :title_cont, class: 'form-control', placeholder: 'title' %>
+            </div>
+            <div class="form-group">
+              <%= f.search_field :display_artist_cont, class: 'form-control', placeholder: 'display_artist' %>
+            </div>
+            <%= f.submit class: 'btn btn-default' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <%= yield %>
+    </div>
+  </body>
+</html>
