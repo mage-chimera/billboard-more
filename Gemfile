@@ -65,4 +65,4 @@ gem 'bootswatch-rails'
 gem 'kaminari'
 gem 'kaminari-bootstrap'
 gem 'ransack'
-gem 'rails_12factor', group: :production
+gem 'rails_12factor'
